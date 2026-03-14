@@ -1,0 +1,72 @@
+<%
+// About Us Page with Images and Enhanced Styling
+%>
+
+<!-- Page Header -->
+<section class="page-header" style="background-image: url('/images/about-bg.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Trusted Tree Service in Gold Beach, OR</h1>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="about-content section-padding">
+    <div class="container">
+        
+        <!-- Intro with Image -->
+        <div class="service-intro">
+            <div class="intro-text">
+                
+                <p>JT & Sons Tree Service LLC is a family-owned and operated tree service company in Gold Beach, Oregon, proudly serving homeowners and businesses across Curry County and the Southern Oregon Coast. With over 30 years of experience in the tree industry, we specialize in tree trimming, hazardous tree removal, view clearing, land clearing, brush chipping, and fire reduction services.</p>
+                <p>Our goal is to help property owners maintain safe, healthy, and beautiful trees while reducing the risk of storm damage, falling trees, and wildfire hazards. We understand the unique tree care needs of coastal Oregon and provide reliable solutions tailored to the Gold Beach, Brookings, Port Orford, Wedderburn, and Ophir areas.</p>
+            </div>
+            <div class="intro-image">
+                <img src="/images/about.jpg" alt="JT & Sons Tree Service Team" class="rounded-image">
+            </div>
+        </div>
+
+        <!-- Mission & Vision in Containers -->
+        <div class="content-container">
+            <h2>Our Mission</h2>
+            <p>Our mission at JT & Sons Tree Service LLC is to provide reliable and professional tree services in Gold Beach, OR and throughout Curry County. We are committed to delivering safe and high-quality tree trimming, hazardous tree removal, land clearing, brush chipping, and fire reduction services that protect homes, improve landscapes, and maintain the health and beauty of trees along the Southern Oregon Coast.</p>
+        </div>
+
+        <div class="content-container">
+            <h2>Our Vision</h2>
+            <p>Our vision is to become the most trusted tree service company in Gold Beach and Curry County, Oregon, known for our experience, safety, and customer satisfaction. We strive to help property owners maintain safe properties, healthy trees, and wildfire-resistant landscapes through professional tree care, tree removal, and defensible space services.</p>
+        </div>
+
+        <!-- Certifications & Family with Image -->
+        <div class="service-include-row">
+            <div class="service-list">
+                <h2>Licensed & Certified Professionals</h2>
+                <ul>
+                    <li><strong>Powerline Clearance Certified</strong> – Ensuring safety around power lines.</li>
+                    <li><strong>Fully Licensed, Insured & Bonded</strong> – CCB #<%= ccbLicense %></li>
+                    <li><strong>30+ Years of Industry Experience</strong> – Family-owned since 1990s.</li>
+                    <li><strong>Talon, 2nd Generation</strong> – Over 10 years of professional experience.</li>
+                </ul>
+                <p>Our family tradition continues with Talon, the eldest son, bringing the next generation of expertise to the team.</p>
+            </div>
+            <div class="service-image">
+                <img src="/images/about-team2.jpg" alt="Talon - 2nd Generation" class="rounded-image">
+            </div>
+        </div>
+
+        <!-- Closing Statement -->
+        <div class="content-container">
+            <p>If you're looking for professional tree service near Gold Beach, OR, contact JT & Sons Tree Service LLC today for a free estimate.</p>
+        </div>
+
+        <!-- Contact Info Box -->
+        <div class="contact-info-box">
+            <h3>Get Your Free Estimate</h3>
+            <p>
+                <i class="fas fa-phone-alt"></i> Office: <a href="tel:<%= sitePhone %>"><%= sitePhone %></a><br>
+                <i class="fas fa-mobile-alt"></i> Cell/Text: <a href="tel:<%= siteCell %>"><%= siteCell %></a><br>
+                <i class="fas fa-envelope"></i> Email: <a href="mailto:<%= siteEmail %>"><%= siteEmail %></a>
+            </p>
+        </div>
+    </div>
+</section>

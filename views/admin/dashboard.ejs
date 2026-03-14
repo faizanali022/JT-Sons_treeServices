@@ -1,0 +1,26 @@
+
+<div class="dashboard">
+    <h1>Dashboard</h1>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="stat-details">
+                <h3><%= messageCount %></h3>
+                <p>Total Messages</p>
+            </div>
+            <a href="/admin/messages" class="stat-link">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-blog"></i>
+            </div>
+            <div class="stat-details">
+                <h3><%= blogCount %></h3>
+                <p>Blog Posts</p>
+            </div>
+            <a href="/admin/blog" class="stat-link">Manage <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>

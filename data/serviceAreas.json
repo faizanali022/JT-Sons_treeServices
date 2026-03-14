@@ -1,0 +1,10 @@
+[
+    { "name": "Gold Beach", "slug": "gold-beach" },
+    { "name": "Brookings", "slug": "brookings" },
+    { "name": "Pistol River", "slug": "pistol-river" },
+    { "name": "Ophir", "slug": "ophir" },
+    { "name": "Agness", "slug": "agness" },
+    { "name": "Port Orford", "slug": "port-orford" },
+    { "name": "Bandon", "slug": "bandon" },
+    { "name": "Coos Bay", "slug": "coos-bay" }
+]

@@ -1,0 +1,48 @@
+
+<div class="bookings">
+    <h1>Booking Requests</h1>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (bookings.length === 0) { %>
+                <tr><td colspan="8">No bookings</td></tr>
+            <% } %>
+            <% bookings.forEach(b => { %>
+            <tr>
+                <td><%= b._id.toString().slice(-6) %></td>
+                <td><%= b.name %></td>
+                <td><%= b.email %></td>
+                <td><%= b.phone %></td>
+                <td><%= b.serviceType %></td>
+                <td><%= b.preferredDate ? new Date(b.preferredDate).toLocaleDateString() : '—' %></td>
+                <td>
+                    <form action="/admin/bookings/<%= b._id %>/update-status" method="POST">
+                        <select name="status" onchange="this.form.submit()">
+                            <option value="pending" <%= b.status === 'pending' ? 'selected' : '' %>>Pending</option>
+                            <option value="confirmed" <%= b.status === 'confirmed' ? 'selected' : '' %>>Confirmed</option>
+                            <option value="completed" <%= b.status === 'completed' ? 'selected' : '' %>>Completed</option>
+                            <option value="cancelled" <%= b.status === 'cancelled' ? 'selected' : '' %>>Cancelled</option>
+                        </select>
+                    </form>
+                </td>
+                <td>
+                    <form action="/admin/bookings/<%= b._id %>/delete" method="POST" onsubmit="return confirm('Delete?')">
+                        <button type="submit" class="btn-delete"><i class="fas fa-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

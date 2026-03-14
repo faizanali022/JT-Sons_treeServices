@@ -1,0 +1,32 @@
+[
+    {
+        "slug": "tree-removal",
+        "name": "Tree Removal",
+        "description": "Safe and professional removal of hazardous or unwanted trees."
+    },
+    {
+        "slug": "tree-trimming",
+        "name": "Tree Trimming",
+        "description": "Expert trimming and pruning to maintain tree health."
+    },
+    {
+        "slug": "stump-grinding",
+        "name": "Stump Grinding",
+        "description": "Complete stump removal for a clean landscape."
+    },
+    {
+        "slug": "fire-reduction",
+        "name": "Fire Reduction",
+        "description": "Defensible space and brush clearing to reduce wildfire risk."
+    },
+    {
+        "slug": "emergency-tree",
+        "name": "Emergency Tree",
+        "description": "24/7 response for storm damage and fallen trees."
+    },
+    {
+        "slug": "crane-services",
+        "name": "Crane Services",
+        "description": "Large tree removal using crane assistance."
+    }
+]

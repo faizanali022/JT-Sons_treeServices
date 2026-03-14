@@ -1,0 +1,39 @@
+
+<div class="blog-list">
+    <div class="header-actions">
+        <h1>Blog Posts</h1>
+        <a href="/admin/blog/create" class="btn btn-primary">+ New Post</a>
+    </div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Created</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (posts.length === 0) { %>
+                <tr><td colspan="6" class="text-center">No blog posts yet</td></tr>
+            <% } %>
+            <% posts.forEach(post => { %>
+            <tr>
+                <td><%= post.id %></td>
+                <td><%= post.title %></td>
+                <td><%= post.author %></td>
+                <td><%= new Date(post.created_at).toLocaleDateString() %></td>
+                <td><%= post.published ? 'Published' : 'Draft' %></td>
+                <td>
+                    <a href="/admin/blog/edit/<%= post.id %>" class="btn-edit"><i class="fas fa-edit"></i></a>
+                    <form action="/admin/blog/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Delete this post?')" style="display:inline;">
+                        <button type="submit" class="btn-delete"><i class="fas fa-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

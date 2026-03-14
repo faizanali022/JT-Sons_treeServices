@@ -1,0 +1,49 @@
+<% if (locals.quoteError) { %>
+    <div class="alert alert-error"><%= quoteError %></div>
+<% } %>
+<% if (locals.quoteSuccess) { %>
+    <div class="alert alert-success"><%= quoteSuccess %></div>
+<% } %>
+
+<form action="/quote" method="POST" class="quote-form">
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required value="<%= locals.quoteData?.name || '' %>">
+        </div>
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required value="<%= locals.quoteData?.email || '' %>">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" value="<%= locals.quoteData?.phone || '' %>">
+        </div>
+        <div class="form-group">
+            <label for="serviceType">Service Needed *</label>
+            <select id="serviceType" name="serviceType" required>
+                <option value="">Select a service</option>
+                <option value="Tree Removal" <%= locals.quoteData?.serviceType === 'Tree Removal' ? 'selected' : '' %>>Tree Removal</option>
+                <option value="Tree Trimming" <%= locals.quoteData?.serviceType === 'Tree Trimming' ? 'selected' : '' %>>Tree Trimming</option>
+                <option value="Stump Grinding" <%= locals.quoteData?.serviceType === 'Stump Grinding' ? 'selected' : '' %>>Stump Grinding</option>
+                <option value="Fire Reduction" <%= locals.quoteData?.serviceType === 'Fire Reduction' ? 'selected' : '' %>>Fire Reduction</option>
+                <option value="Emergency Tree" <%= locals.quoteData?.serviceType === 'Emergency Tree' ? 'selected' : '' %>>Emergency Tree</option>
+                <option value="Crane Services" <%= locals.quoteData?.serviceType === 'Crane Services' ? 'selected' : '' %>>Crane Services</option>
+                <option value="Other" <%= locals.quoteData?.serviceType === 'Other' ? 'selected' : '' %>>Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="preferredDate">Preferred Date</label>
+            <input type="date" id="preferredDate" name="preferredDate" value="<%= locals.quoteData?.preferredDate || '' %>">
+        </div>
+        <div class="form-group full-width">
+            <label for="address">Property Address</label>
+            <input type="text" id="address" name="address" placeholder="Street, City, ZIP" value="<%= locals.quoteData?.address || '' %>">
+        </div>
+        <div class="form-group full-width">
+            <label for="message">Additional Details</label>
+            <textarea id="message" name="message" rows="4"><%= locals.quoteData?.message || '' %></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+</form>

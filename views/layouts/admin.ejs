@@ -1,0 +1,60 @@
+<% var user = user || null; %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title ? title + ' | ' : '' %>Admin Panel - JT & Sons
+    </title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <% if (user) { %>
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2>JT & Sons Admin</h2>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="/admin/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                        <li><a href="/admin/blog"><i class="fas fa-blog"></i> Blog Posts</a></li>
+                        <li><a href="/admin/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        <li><a href="/admin/bookings"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <% } %>
+                <main class="admin-main">
+                    <% if (user) { %>
+                        <div class="topbar">
+                            <div class="hamburger" id="sidebarToggle">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <div class="user-info">
+                                Welcome, <%= user.username %>
+                            </div>
+                        </div>
+                        <% } %>
+                            <div class="content">
+                                <%- body %>
+                            </div>
+                </main>
+    </div>
+    <script >
+        
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('active');
+    });
+</script>
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>
